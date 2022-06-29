@@ -40,7 +40,7 @@ app.layout = html.Div(children=[
     html.Div(children=[
         # left side
         html.Div([
-                html.H6('Select census variable:'),
+                html.H6('Select a state:'),
                 dcc.Dropdown(
                     id='stats-drop',
                     options=[{'label': i, 'value': i} for i in varlist],
@@ -76,7 +76,7 @@ def display_results(statecode):
         locations=singlestatedf['State_y'], 
         locationmode='USA-states', 
         text = singlestatedf['State_y'], 
-        colorbar=dict(title="millions"))]
+        colorbar=dict(title="Millions"))]
     
     layout = dict(title='Total Population', 
                   geo = dict(scope='usa', projection=dict(type='albers usa'), showlakes = True, lakecolor = 'rgb(66,165,245)'))
